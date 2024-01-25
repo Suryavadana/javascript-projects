@@ -18,19 +18,20 @@ function mealAssembly(protein, grains, veggies, beverages, desserts, numMeals) {
   /// Code your solution for part A #2 below this comment (and above the return statement) ... ///
   
   for(let j=0;j<numMeals;j++)
-  {
-    let newMeal=[];
-    for(let i=0;i<pantry.length;i++)
+    //create empty meal to add the meals to array
     {
-     /*const newArray =pantry[i];
+      let meal=[];
+    for(let i=0;i<pantry.length;i++)
+    { 
+      // add random elements to the single meal.
+     const newArray =pantry[i];
       const indexOfRandomElement = Math.floor(Math.random() * newArray.length);
       const randomElement = newArray[indexOfRandomElement];
-      meals.push(randomElement); */
-      newMeal.push(pantry[i][j]);
-    
-     
+      meal.push(randomElement); 
+      //newMeal.push(pantry[i][j]); (to enter the elements index wise)
     }
-    meals.push(newMeal);
+    //and then add the single meal to meals array.
+    meals.push(meal);
   }
   
   return meals;
@@ -58,13 +59,16 @@ function generatePassword(string1, string2) {
   string1 = input.question("Enter the string1: ");
   string2 = input.question("Enter the string2: ");
   /// Code your Bonus Mission Solution here ///
-
+  if(string1.length == string2.length){
     for(let i=0;i<string1.length || i<string2.length;i++)
     {
+      
         code+=string1[i]+string2[i];
     }
-  
- 
+  }
+  else{
+    console.log("2 strings lengths should be same.")
+  }
   return code;
 }
 
