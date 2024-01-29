@@ -11,5 +11,27 @@ a) Triple any the numbers.
 b) Replace any strings with “ARRR!”
 c) Print the new array to confirm your work.
 */
-
+const prompt = require('prompt-sync')();
+const input = require('readline-sync');
 let arr = ['Elocution', 21, 'Clean teeth', 100];
+let example = function(arg1)
+{
+    if(typeof arg1 === 'number')
+    {
+       
+        return arg1=arg1*3;
+    }
+    else if(typeof arg1 === 'string')
+    {
+        return 'ARRR!';
+    }
+    else
+    {
+        return arg1;
+    }
+};
+
+
+let mappedArray = arr.map(example);  
+console.log(mappedArray); 
+

@@ -17,12 +17,48 @@ function holdStatus(arr){
     return "Full";
   }
 }
+let nonSuspiciousFunction = function (a)
+{
+  if(checkFuel(a)==='green')
+  {
+     return a - 100001;
+  }
+  else if(checkFuel(a)==='yellow')
+  {
+    return a - 50001;
+  }
+  else 
+  {
+    return a;
+  }
+};
+let newArray=[];
+let innocent = function(arr)
+{
+  newArray = arr.splice(0,2);
+ 
+  arr.push("grass");
+  arr.push("empty boxes");
+  return newArray;
 
+};
+
+let irs = function (levelOfFuel ,itemsInCargo)
+{
+  let a= innocent(itemsInCargo);
+  return `Raided ${nonSuspiciousFunction(fuelLevel)} kg of fuel from the tanks, and stole ${a[0]} and ${a[1]} from the cargo hold.`
+};
 let fuelLevel = 200000;
 let cargoHold = ['meal kits', 'space suits', 'first-aid kit', 'satellite', 'gold', 'water', 'AE-35 unit'];
 
-console.log("Fuel level: " + checkFuel(fuelLevel));
+console.log("Fuel level: " + nonSuspiciousFunction(fuelLevel));
 console.log("Hold status: " + holdStatus(cargoHold));
+
+innocent(cargoHold);
+//console.log(innocent(cargoHold));
+
+//console.log(cargoHold);
+console.log(irs(fuelLevel,newArray));
 
 /* Steal some fuel from the shuttle:
  * /
@@ -35,8 +71,12 @@ console.log("Hold status: " + holdStatus(cargoHold));
 
 //d). Decide where to best place your function call to gather our new fuel.
 
+
 /* Next, liberate some of that glorious cargo.
- * /
+ * / 
+
+
+
 
 //a). Define another anonymous function with an array as a parameter, and set it equal to another innocent variable.
 
@@ -54,4 +94,4 @@ console.log("Hold status: " + holdStatus(cargoHold));
 //b). Call your anonymous fuel and cargo functions from within irs.
 
 //c). Use a template literal to return, "Raided _____ kg of fuel from the tanks, and stole ____ and ____ from the cargo hold."
-
+*/
