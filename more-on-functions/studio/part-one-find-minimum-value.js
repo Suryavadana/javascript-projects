@@ -6,5 +6,19 @@ let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
 
 //Using one of the test arrays as the argument, call your function inside the console.log statement below.
-
-console.log(/* your code here */);
+let arr1=[];
+let arr = function(minimumValue)
+{
+    if(minimumValue===1)
+    {
+        return minimumValue;
+    }
+    else
+    {
+       
+        return Math.min(...minimumValue);
+    }
+};
+console.log(arr(nums1));
+console.log(arr(nums2));
+console.log(arr(nums3));
