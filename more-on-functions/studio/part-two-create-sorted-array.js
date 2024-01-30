@@ -30,12 +30,12 @@ function findMinValue(arr){
 let nums1 = [5, 10, 2, 42]
 let nums2 = [-2, 0, -10, -44, 5, 3, 0, 3];
 let nums3 = [200, 5, 4, 10, 8, 5, -3.3, 4.4, 0];
-//console.log(nums1.indexOf(findMinValue(nums1)));
-//let newArray=[];
-/*newarray = newArray.push((findMinValue(nums1)));
-nums1.splice(findMinValue(nums1),1);
-console.log(newArray);
-console.log(nums1); */
+// console.log(nums1.indexOf(findMinValue(nums1)));
+// let newArray=[];
+// newarray = newArray.push((findMinValue(nums1)));
+// nums1.splice(findMinValue(nums1),1);
+// console.log(newArray);
+// console.log(nums1); 
 function sortedArray(arr)
 {
   let i=0;
@@ -47,18 +47,19 @@ function sortedArray(arr)
       i++;
   }
   return newArray;  
-
-  // if(findMinValue(arr)===0)
-  // {
-  //     return newArray;
-  // }
-  // else{
-  //   newArray.push(findMinValue(arr));
-  //   arr.splice(arr.indexOf(findMinValue(arr)),1);
-  //   i++;
-  // }
 }
-console.log("original array" + nums1);
+function recursiveSortArray (unsortedArray, newArray=[]){
+  //"escape" conditional, 
+  if (unsortedArray.length===1){
+      newArray.push(unsortedArray[0]);
+  } else {
+      newArray.push(findMinValue(unsortedArray));
+      unsortedArray.splice(unsortedArray.indexOf(findMinValue(unsortedArray)),1);
+      recursiveSortArray(unsortedArray,newArray);
+  }
+  return newArray;
+}
+console.log("original array: " + nums1);
 console.log("sorted array: " + sortedArray(nums1));
 console.log("emptied array: " + nums1);
 console.log("original array:" +nums2)
@@ -67,6 +68,7 @@ console.log("emptied array: " + nums2);
 console.log("original array" + nums3); 
 console.log("sorted array: " +sortedArray(nums3));
 console.log("emptied array: " + nums3);
+console.log(recursiveSortArray(nums1));
 
 
 
