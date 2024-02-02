@@ -86,7 +86,8 @@ function oxygenExpended(candidate)
 {
     candidate = selectRandomEntry(candidates);
     let spacewalk =missionDuration(3);
-    let oxygenConsumed = candidate.o2Used(spacewalk);
+    let oxygenConsumed = (candidate.o2Used(spacewalk)*1000)/1000;
+
     return (`${candidate["name"]} will perform the spacewalk, which will last ${spacewalk} hours and require ${oxygenConsumed} kg of oxygen.`);
 
 }
