@@ -91,7 +91,7 @@ function makeDiamond(height)
 
 function runProgram()
 {
-    console.log(makeLine(5, '*'));
+    console.log(makeLine(5));
     console.log('-------------------');
     console.log(makeSquare(5));
     console.log('-------------------');

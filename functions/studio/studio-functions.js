@@ -61,7 +61,7 @@ let arrayTest=[arrayTest1,arrayTest2,arrayTest3];
         let newArray=[];
         for(let j=0;j<arrayTest[i].length;j++)
         {
-            newArray.push(reverseCharacters(arrayTest[i][j]));
+            newArray.push(reverseCharacters(arrayTest[i][j]));  
         }
         console.log(newArray);
 

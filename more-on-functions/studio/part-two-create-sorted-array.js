@@ -48,17 +48,17 @@ function sortedArray(arr)
   }
   return newArray;  
 }
-function recursiveSortArray (unsortedArray, newArray=[]){
-  //"escape" conditional, 
-  if (unsortedArray.length===1){
-      newArray.push(unsortedArray[0]);
-  } else {
-      newArray.push(findMinValue(unsortedArray));
-      unsortedArray.splice(unsortedArray.indexOf(findMinValue(unsortedArray)),1);
-      recursiveSortArray(unsortedArray,newArray);
-  }
-  return newArray;
-}
+// function recursiveSortArray (unsortedArray, newArray=[]){
+//   //"escape" conditional, 
+//   if (unsortedArray.length===1){
+//       newArray.push(unsortedArray[0]);
+//   } else {
+//       newArray.push(findMinValue(unsortedArray));
+//       unsortedArray.splice(unsortedArray.indexOf(findMinValue(unsortedArray)),1);
+//       recursiveSortArray(unsortedArray,newArray);
+//   }
+//   return newArray;
+// }
 console.log("original array: " + nums1);
 console.log("sorted array: " + sortedArray(nums1));
 console.log("emptied array: " + nums1);
@@ -68,7 +68,7 @@ console.log("emptied array: " + nums2);
 console.log("original array" + nums3); 
 console.log("sorted array: " +sortedArray(nums3));
 console.log("emptied array: " + nums3);
-console.log(recursiveSortArray(nums1));
+//console.log(recursiveSortArray(nums1));
 
 
 
